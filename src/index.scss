@@ -1,0 +1,67 @@
+@import "./scss/vars";
+
+@font-face {
+  font-family: "pokemon_gbregular";
+  src: url("./assets/fonts/pokemongb-raeo-webfont.woff2") format("woff2"),
+    url("./assets/fonts/pokemongb-raeo-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background: #7ac9f9;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dex-container {
+  width: 1100px;
+  margin: auto;
+  position: relative;
+}
+
+.dex-base {
+  box-shadow: $case-shadow;
+}
+
+.metal {
+  background-size: 195px;
+  background-image: url("./assets/red-metal.jpg");
+}
+
+.display {
+  border: 2px solid #dddbd7;
+  border-radius: 5px;
+  background-color: #3bb095;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.7);
+  background-image: url("./assets/gun-metal.png");
+}
+
+.list-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ui-item {
+  background: linear-gradient(
+    rgba(#2d3539, 0.7),
+    rgba(#3e5259, 0.7) 40%,
+    rgba(#394d54, 0.7) 3%,
+    rgba(#2d3539, 0.7)
+  );
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px 25px;
+  color: #fff;
+  margin: 4px;
+  display: flex;
+  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  text-shadow: 0px 0px 2px #000;
+  border-radius: 5px;
+  width: calc(50% - 8px);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  text-shadow: 0px 0px 2px #000;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-transform: capitalize;
+}
