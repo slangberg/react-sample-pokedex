@@ -4,6 +4,7 @@ import { APIEnpointData, EvoultionItem, EvoultionResponse, LocationItem, Pokemon
 import { MOCK_POKEMON } from '../mocks/mock'
 
 interface GlobalState {
+  loading: boolean;
   pokemon?: PokemonResponse;
   species?: SpeciesResponse;
   evoultions?:  APIEnpointData[];
@@ -16,7 +17,7 @@ export interface PopData {
   locations: LocationItem[];
 }
 
-const initialState: GlobalState = { pokemon: MOCK_POKEMON}
+const initialState: GlobalState = {loading: false }
 
 const pokemonSlice = createSlice({
   name: 'pokemon',
@@ -24,6 +25,9 @@ const pokemonSlice = createSlice({
   reducers: {
     setPokemon(state, action: PayloadAction<PokemonResponse>) {
       state.pokemon = action.payload
+    },
+    setLoading(state, action: PayloadAction<boolean>) {
+      state.loading = action.payload
     },
     populateExtraData(state, action: PayloadAction<PopData>) {
       const {species, evoultions, locations } = action.payload;
@@ -34,5 +38,5 @@ const pokemonSlice = createSlice({
   },
 })
 
-export const { setPokemon, populateExtraData } = pokemonSlice.actions
+export const { setPokemon, populateExtraData, setLoading } = pokemonSlice.actions
 export default pokemonSlice.reducer

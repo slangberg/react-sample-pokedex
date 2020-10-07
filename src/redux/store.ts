@@ -1,12 +1,11 @@
 import { Action, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { createDispatchHook, createSelectorHook } from 'react-redux';
-import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk';
-import { MOCK_POKEMON } from '../mocks/mock';
+import thunk, { ThunkDispatch } from 'redux-thunk';
 
 import global from './global';
 
 const DEFAULT_STATE: RootState = {
-  pokemon: MOCK_POKEMON
+  loading: false
 };
 const MIDDLEWARE = [...getDefaultMiddleware(), thunk];
 

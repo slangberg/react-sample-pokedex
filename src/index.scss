@@ -1,5 +1,5 @@
 @import "./scss/vars";
-
+@import "./scss/mixins";
 @font-face {
   font-family: "pokemon_gbregular";
   src: url("./assets/fonts/pokemongb-raeo-webfont.woff2") format("woff2"),
@@ -64,4 +64,27 @@ body {
   border-radius: 5px;
   box-sizing: border-box;
   text-transform: capitalize;
+}
+
+
+.key {
+  @include linear-gradient($blue, $dark-blue);
+  z-index: 100;
+  border-radius: 4px;
+  box-shadow: -1px 1px 0px 2px darken($blue, 35%);
+  cursor: pointer;
+  width: 95px;
+  line-height: 35px;
+  text-align: center;
+  color: #FFF;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 6px;
+  text-shadow: 0px 0px 2px #000;
+}
+
+.key:active {
+  @include linear-gradient(darken($blue, 40%), $blue);
+  box-shadow: 0px 0px 5px 2px darken($blue, 30%) inset,
+    -1px 1px 0px 2px darken($blue, 35%);
 }

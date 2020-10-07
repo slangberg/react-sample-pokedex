@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { RootState, usePokeDispatch, usePokeSelector } from "../redux/store";
 import { getPokemonThunk } from "../redux/thunks";
 
@@ -14,5 +14,6 @@ export const usePageRefresh = () => {
     if(id !== currentID){
       dispatch(getPokemonThunk(id));
     }
-  }, [id, currentID])
+
+  }, []);
 };
