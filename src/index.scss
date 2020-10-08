@@ -66,6 +66,13 @@ body {
   text-transform: capitalize;
 }
 
+.interactive .ui-item {
+  cursor: pointer;
+  &:hover {
+    background: rgba(#2d3539, 0.7);
+  }
+}
+
 
 .key {
   @include linear-gradient($blue, $dark-blue);

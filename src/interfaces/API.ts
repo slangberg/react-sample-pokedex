@@ -3,6 +3,11 @@ export interface APIEnpointData {
   url: string;
 }
 
+export interface HistoryData {
+  name: string;
+  id: number;
+}
+
 export interface EvoultionItem {
   evolves_to?: EvoultionItem[];
   species: APIEnpointData;

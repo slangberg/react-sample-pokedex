@@ -7,6 +7,7 @@ import Locations from "../../views/Locations/Locations";
 import Moves from "../../views/Moves/Moves";
 import { Types } from "../../views/Types/Types";
 import Varietes from "../../views/Varietes/Varietes";
+import History from "../../views/History/History";
 export const Routes: FC<{}> = ({ children }) => {
   return (
     <Switch>
@@ -30,6 +31,9 @@ export const Routes: FC<{}> = ({ children }) => {
       </Route>
       <Route path="/locations/:id">
         <Locations />
+      </Route>
+      <Route path="/history">
+        <History />
       </Route>
       <Route exact path="/">
         <div className="empty">IS Empty</div>

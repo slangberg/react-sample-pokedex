@@ -5,7 +5,8 @@ import thunk, { ThunkDispatch } from 'redux-thunk';
 import global from './global';
 
 const DEFAULT_STATE: RootState = {
-  loading: false
+  loading: false,
+  history: []
 };
 const MIDDLEWARE = [...getDefaultMiddleware(), thunk];
 

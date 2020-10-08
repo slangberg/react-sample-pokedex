@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import DexLeft from "./componets/DexLeft/DexLeft";
 import DexRight from "./componets/DexRight/DexRight";
@@ -13,7 +13,7 @@ function App() {
     <Provider store={store}>
       <Router>
         <div className="dex-container">
-          <DexLeft pokemon={(MOCK_POKEMON as any) as PokemonResponse} />
+          <DexLeft />
           <DexRight>
             <Routes />
           </DexRight>

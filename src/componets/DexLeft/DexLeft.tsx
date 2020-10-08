@@ -5,21 +5,44 @@ import Display from "./Display/Display";
 import { PokemonResponse } from "../../interfaces/API";
 import { usePokeDispatch } from "../../redux/store";
 import { getPokemonThunk } from "../../redux/thunks";
-export const DexLeft: FC<{ pokemon: PokemonResponse }> = ({ pokemon }) => {
-  const [name, setName] = useState<string>('')
+import { NavLink } from "react-router-dom";
+export const DexLeft: FC<{}> = () => {
+  const [name, setName] = useState<string>("");
   const dispatch = usePokeDispatch();
+
+  const onKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      dispatch(getPokemonThunk(name));
+    }
+  };
 
   return (
     <div className="dex-info-container dex-base metal">
       <Header />
       <div id="dex-info-body">
-        <Display />
-        <div className="key" onClick={() => {
-            dispatch(getPokemonThunk(name))}
-          }>
-          <i className="fa fa-search" />
+        <div className="input-wrap">
+          <div
+            className="search-btn"
+            onClick={() => {
+              dispatch(getPokemonThunk(name));
+            }}
+          >
+            <i className="fa fa-search" />
+          </div>
+          <input
+            className="search-input"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            onKeyDown={onKeyDown}
+          />
         </div>
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)}/>
+        <Display />
+      </div>
+      <div className="left-nav">
+        <NavLink className="key" to={`/history`}>
+          History
+        </NavLink>
       </div>
     </div>
   );
